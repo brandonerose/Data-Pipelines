@@ -1,5 +1,11 @@
 This is the source code for "Data Pipelines: Using a
-Model-View-Controller Framework in R". It was written with **bookdown**.
+Model-View-Controller Framework in R". It was written with **bookdown**. The rendered version is in the docs folder. The rest of the files at the root are edited to edit the book. If you want to edit the book you check out the project in git using RStudio. After the edits you refer to the script.R file and run the following lines...
+
+``` r
+bookdown::render_book("index.Rmd", "bookdown::bs4_book",output_dir = "docs")
+bookdown::render_book("index.Rmd", "bookdown::epub_book",output_dir = "docs")
+bookdown::render_book("index.Rmd", "bookdown::pdf_book", output_dir = "docs")
+```
 
 ## Links
 
