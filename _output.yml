@@ -2,7 +2,7 @@ bookdown::bs4_book:
   css: style.css
   theme:
     primary: "#096B72"
-  repo: https://github.com/brandonerose/Data-Piplines
+  repo: https://github.com/brandonerose/Data-Pipelines
   biblio-style: apalike
   csl: chicago-fullnote-bibliography.csl
 bookdown::pdf_book:
