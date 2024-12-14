@@ -1,5 +1,5 @@
 ---
-title: "Data Pipelines: Adapting a Model-View-Controller Framework in R"
+title: "Data Pipelines: Using a Model-View-Controller Framework in R"
 author: "Brandon Rose and Natalie Goulett"
 date: "12/2024"
 site: bookdown::bookdown_site
