@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 1 What is {RosyREDCap}? | Data Pipelines: Adapting a Model-View-Controller Framework in R</title>
+<meta name="author" content="Brandon Rose and Natalie Goulett">
+<meta name="description" content="An R package pairs the best of R with REDCap API.">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
+<meta property="og:title" content="Chapter 1 What is {RosyREDCap}? | Data Pipelines: Adapting a Model-View-Controller Framework in R">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://brandonerose.github.io/Data-Pipelines/">
+<meta property="og:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
+<meta property="og:description" content="An R package pairs the best of R with REDCap API.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 1 What is {RosyREDCap}? | Data Pipelines: Adapting a Model-View-Controller Framework in R">
+<meta name="twitter:description" content="An R package pairs the best of R with REDCap API.">
+<meta name="twitter:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Pipelines: Adapting a Model-View-Controller Framework in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="active" href="index.html"><span class="header-section-number">1</span> What is {RosyREDCap}?</a></li>
+<li><a class="" href="intended-uses.html"><span class="header-section-number">2</span> Intended Uses</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/brandonerose/Data-Piplines">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="what-is-rosyredcap" class="section level1" number="1">
+<h1>
+<span class="header-section-number">1</span> What is <code>{RosyREDCap}</code>?<a class="anchor" aria-label="anchor" href="#what-is-rosyredcap"><i class="fas fa-link"></i></a>
+</h1>
+<!-- <img src="images" class="left" width="20%"/> -->
+<p>[<a href="https://github.com/brandonerose/RosyREDCap">RosyREDCap</a>] <img src="images/RosyREDCap.png" align="right" height="150"></p>
+<p>R and REDCap are both widely utilized in medicine, including basic science, clinical research, and clinal trials.
+Both have independent strengths, but together they can create powerful data pipelines.
+While several R packages exist for extracting data using the REDCap API, <a href="https://github.com/brandonerose/RosyREDCap">RosyREDCap</a> stands out by offering comprehensive extraction of all metadata and data from any REDCap project into a standardized R list object, facilitating effortless downstream use in exports, imports, transformation, and applications.
+Three core aims of <a href="https://github.com/brandonerose/RosyREDCap">RosyREDCap</a> are to</p>
+<ol style="list-style-type: decimal">
+<li>Maintain a local version of the database (DB) object by only calling recently updated records using the REDCap log.</li>
+<li>Allow imports of non-coded versions of the dataset using R or Excel/CSV.</li>
+<li>Launch a shiny app that allows you to explore all of your REDCap projects.</li>
+</ol>
+<p>By leveraging the combined strengths of R and REDCap, users can maintain strong clinical data pipelines, collected and processed appropriately to improve research and patient care.
+RosyREDCap can be used as a base data object and data quality tool for most REDCap projects to aid in collection, monitoring, transformation, and analysis.</p>
+<div id="installing-rosyredcap" class="section level2" number="1.1">
+<h2>
+<span class="header-section-number">1.1</span> Installing RosyREDCap<a class="anchor" aria-label="anchor" href="#installing-rosyredcap"><i class="fas fa-link"></i></a>
+</h2>
+<p><em>Note: The current version of <a href="https://github.com/brandonerose/RosyREDCap">RosyREDCap</a> used when writing this book is 1.0.0.9030, and some of the features presented in this book might not be available if you are using an older version, or be a little bit different if you have a newer version. Feel free to browse the package NEWS.</em></p>
+<p>The stable release can be found on CRAN and installed with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"RosyREDCap"</span><span class="op">)</span></span></code></pre></div>
+<p>You can install the development version of RosyREDCap from GitHub by using the <a href="https://remotes.r-lib.org">remotes</a> package.
+Be sure to install <a href="https://remotes.r-lib.org">remotes</a> if you don’t have it already.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"brandonerose/RosyREDCap"</span><span class="op">)</span></span></code></pre></div>
+<p>Note that the version used at the time of writing this book is 1.0.0.9030.
+You can check what version you have installed with the following.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"RosyREDCap"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] '1.0.0.9030'</span></span></code></pre></div>
+<p>The motivation behind <a href="https://github.com/brandonerose/RosyREDCap">RosyREDCap</a> is that building a proof-of-concept application is easy, but <strong>things change when the application becomes larger and more complex, and especially when you need to send that app to production</strong>.
+Until recently there has not been any real framework for building and deploying production-grade <a href="https://shiny.posit.co/">shiny</a> apps.
+This is where <a href="https://github.com/brandonerose/RosyREDCap">RosyREDCap</a> comes into play: <strong>offering <a href="https://shiny.posit.co/">shiny</a> developers a toolkit for making a stable, easy-to-maintain, and robust production web application with R</strong>.
+<a href="https://github.com/brandonerose/RosyREDCap">RosyREDCap</a> has been developed to abstract away the most common engineering tasks (for example, module creation, addition and linking of an external CSS or JavaScript file, etc.), so you can focus on what matters: building the application.
+Once your application is ready to be deployed, <a href="https://github.com/brandonerose/RosyREDCap">RosyREDCap</a> guides you through testing and brings tools for deploying to common platforms.</p>
+<p>If you have any issues, try downloading the most recent version of R at RStudtio and update all packages in RStudio.
+See <a href="https://www.thecodingdocs.com/r/getting-started" title="R Getting Started">thecodingdocs.com/r/getting-started</a>.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="empty"></div>
+<div class="next"><a href="intended-uses.html"><span class="header-section-number">2</span> Intended Uses</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#what-is-rosyredcap"><span class="header-section-number">1</span> What is {RosyREDCap}?</a></li>
+<li><a class="nav-link" href="#installing-rosyredcap"><span class="header-section-number">1.1</span> Installing RosyREDCap</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/brandonerose/Data-Piplines/blob/master/index.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/brandonerose/Data-Piplines/edit/master/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Pipelines: Adapting a Model-View-Controller Framework in R</strong>" was written by Brandon Rose and Natalie Goulett. It was last built on 12/2024.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

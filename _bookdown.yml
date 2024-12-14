@@ -1,0 +1,12 @@
+book_filename: "Data-Pipelines"
+new_session: true
+before_chapter_script: _common.R
+output_dir: "docs"
+delete_merged_file: true
+output:
+  bookdown::bs4_book: NULL
+  bookdown::pdf_book: NULL
+  bookdown::epub_book: NULL
+language:
+  ui:
+    chapter_name: "Chapter "
