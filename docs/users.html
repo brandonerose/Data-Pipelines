@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 6 Users | Data Pipelines: Using a Model-View-Controller Framework in R</title>
+<title>Chapter 2 Users | Data Pipelines: Using a Model-View-Controller Framework in R</title>
 <meta name="author" content="Brandon Rose and Natalie Goulett">
 <meta name="description" content="In any data pipeline you should take stock of various users you have. You can’t do it all on your own and if you can you shouldn’t! The best work is produced by diverse teams with shared goals. ...">
 <meta name="generator" content="bookdown 0.41 with bs4_book()">
-<meta property="og:title" content="Chapter 6 Users | Data Pipelines: Using a Model-View-Controller Framework in R">
+<meta property="og:title" content="Chapter 2 Users | Data Pipelines: Using a Model-View-Controller Framework in R">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://brandonerose.github.io/Data-Pipelines/users.html">
 <meta property="og:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
 <meta property="og:description" content="In any data pipeline you should take stock of various users you have. You can’t do it all on your own and if you can you shouldn’t! The best work is produced by diverse teams with shared goals. ...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 6 Users | Data Pipelines: Using a Model-View-Controller Framework in R">
+<meta name="twitter:title" content="Chapter 2 Users | Data Pipelines: Using a Model-View-Controller Framework in R">
 <meta name="twitter:description" content="In any data pipeline you should take stock of various users you have. You can’t do it all on your own and if you can you shouldn’t! The best work is produced by diverse teams with shared goals. ...">
 <meta name="twitter:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,19 +47,15 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> What is a Data Pipeline?</a></li>
-<li><a class="" href="what-is-model-view-controller.html"><span class="header-section-number">2</span> What is Model-View-Controller?</a></li>
-<li><a class="" href="when-is-a-data-pipeline-needed.html"><span class="header-section-number">3</span> When is a Data Pipeline Needed?</a></li>
-<li><a class="" href="applications-as-a-data-pipeline.html"><span class="header-section-number">4</span> Applications as a data pipeline</a></li>
-<li><a class="" href="authors.html"><span class="header-section-number">5</span> Authors</a></li>
-<li><a class="active" href="users.html"><span class="header-section-number">6</span> Users</a></li>
-<li><a class="" href="models.html"><span class="header-section-number">7</span> Models</a></li>
-<li><a class="" href="views.html"><span class="header-section-number">8</span> Views</a></li>
-<li><a class="" href="controllers.html"><span class="header-section-number">9</span> Controllers</a></li>
-<li><a class="" href="categorizing-software-by-mvc.html"><span class="header-section-number">10</span> Categorizing Software by MVC</a></li>
-<li><a class="" href="example-pipelines.html"><span class="header-section-number">11</span> Example Pipelines</a></li>
-<li><a class="" href="conclusion.html"><span class="header-section-number">12</span> Conclusion</a></li>
-<li><a class="" href="about-the-authors.html"><span class="header-section-number">13</span> About the Authors</a></li>
-<li><a class="" href="glossary.html"><span class="header-section-number">14</span> Glossary</a></li>
+<li><a class="active" href="users.html"><span class="header-section-number">2</span> Users</a></li>
+<li><a class="" href="models.html"><span class="header-section-number">3</span> Models</a></li>
+<li><a class="" href="views.html"><span class="header-section-number">4</span> Views</a></li>
+<li><a class="" href="controllers.html"><span class="header-section-number">5</span> Controllers</a></li>
+<li><a class="" href="categorizing-software-by-mvc.html"><span class="header-section-number">6</span> Categorizing Software by MVC</a></li>
+<li><a class="" href="example-pipelines.html"><span class="header-section-number">7</span> Example Pipelines</a></li>
+<li><a class="" href="conclusion.html"><span class="header-section-number">8</span> Conclusion</a></li>
+<li><a class="" href="about-the-authors.html"><span class="header-section-number">9</span> About the Authors</a></li>
+<li><a class="" href="glossary.html"><span class="header-section-number">10</span> Glossary</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -68,14 +64,14 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="users" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="users" class="section level1" number="2">
 <h1>
-<span class="header-section-number">6</span> Users<a class="anchor" aria-label="anchor" href="#users"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2</span> Users<a class="anchor" aria-label="anchor" href="#users"><i class="fas fa-link"></i></a>
 </h1>
 <p>In any data pipeline you should take stock of various users you have. You can’t do it all on your own and if you can you shouldn’t! The best work is produced by diverse teams with shared goals.</p>
-<div id="four-categories-of-data-pipeline-users" class="section level2" number="6.1">
+<div id="four-categories-of-data-pipeline-users" class="section level2" number="2.1">
 <h2>
-<span class="header-section-number">6.1</span> Four Categories of Data Pipeline Users<a class="anchor" aria-label="anchor" href="#four-categories-of-data-pipeline-users"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1</span> Four Categories of Data Pipeline Users<a class="anchor" aria-label="anchor" href="#four-categories-of-data-pipeline-users"><i class="fas fa-link"></i></a>
 </h2>
 <p>The value of a team member has nothing to do with the categories below. However, in the context of data pipeline design you have four categories of users: End User, Basic User, Intermediate User, and Advanced User.</p>
 <div id="the-end-user" class="section level3 unnumbered">
@@ -99,9 +95,9 @@
 <p>The advanced user is highly proficient and can use the software to tackle complex problems. They understand how to customize, extend, and integrate it with other systems or tools. This includes creating reusable solutions like functions, modules, or pipelines. They may leverage APIs, manage databases, and optimize workflows, often serving as the go-to expert for solving challenging technical issues or innovating within their domain.</p>
 </div>
 </div>
-<div id="types-of-r-users-as-an-example" class="section level2" number="6.2">
+<div id="types-of-r-users-as-an-example" class="section level2" number="2.2">
 <h2>
-<span class="header-section-number">6.2</span> Types of R Users as an Example<a class="anchor" aria-label="anchor" href="#types-of-r-users-as-an-example"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2</span> Types of R Users as an Example<a class="anchor" aria-label="anchor" href="#types-of-r-users-as-an-example"><i class="fas fa-link"></i></a>
 </h2>
 <p>It’s very important to gauge where you fall on the spectrum of R users before and during a project. You want to recognize your limitations so that more experienced users can accelerate your learning. Regardless of your current ability, the best way forward is with active learning with real projects.</p>
 <div id="the-never-end-r-user" class="section level3 unnumbered">
@@ -125,23 +121,23 @@
 <p>An advanced R user understands how R packages work. They can write reusable functions and do complex tasks that may include API calls, data transformations, working with SQL and more.</p>
 </div>
 </div>
-<div id="how-does-this-affect-your-data-pipeline" class="section level2" number="6.3">
+<div id="how-does-this-affect-your-data-pipeline" class="section level2" number="2.3">
 <h2>
-<span class="header-section-number">6.3</span> How does this affect your data pipeline?<a class="anchor" aria-label="anchor" href="#how-does-this-affect-your-data-pipeline"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.3</span> How does this affect your data pipeline?<a class="anchor" aria-label="anchor" href="#how-does-this-affect-your-data-pipeline"><i class="fas fa-link"></i></a>
 </h2>
 <p>You should tailor how you design and how you communicate your data pipeline based on the different users. If your team is all end users, then you should rely on commercial and free software to accomplish your goals. If you have many different types of users then you may have the opportunity to create more custom applications.</p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="authors.html"><span class="header-section-number">5</span> Authors</a></div>
-<div class="next"><a href="models.html"><span class="header-section-number">7</span> Models</a></div>
+<div class="prev"><a href="index.html"><span class="header-section-number">1</span> What is a Data Pipeline?</a></div>
+<div class="next"><a href="models.html"><span class="header-section-number">3</span> Models</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#users"><span class="header-section-number">6</span> Users</a></li>
+<li><a class="nav-link" href="#users"><span class="header-section-number">2</span> Users</a></li>
 <li>
-<a class="nav-link" href="#four-categories-of-data-pipeline-users"><span class="header-section-number">6.1</span> Four Categories of Data Pipeline Users</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#four-categories-of-data-pipeline-users"><span class="header-section-number">2.1</span> Four Categories of Data Pipeline Users</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#the-end-user">The End User</a></li>
 <li><a class="nav-link" href="#the-basic-user">The Basic User</a></li>
 <li><a class="nav-link" href="#the-intermediate-user">The Intermediate User</a></li>
@@ -149,14 +145,14 @@
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#types-of-r-users-as-an-example"><span class="header-section-number">6.2</span> Types of R Users as an Example</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#types-of-r-users-as-an-example"><span class="header-section-number">2.2</span> Types of R Users as an Example</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#the-never-end-r-user">The Never (End) R User</a></li>
 <li><a class="nav-link" href="#the-basic-r-user">The Basic R User</a></li>
 <li><a class="nav-link" href="#the-intermediate-r-user">The Intermediate R User</a></li>
 <li><a class="nav-link" href="#the-advanced-r-user">The Advanced R User</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#how-does-this-affect-your-data-pipeline"><span class="header-section-number">6.3</span> How does this affect your data pipeline?</a></li>
+<li><a class="nav-link" href="#how-does-this-affect-your-data-pipeline"><span class="header-section-number">2.3</span> How does this affect your data pipeline?</a></li>
 </ul>
 
       <div class="book-extra">
