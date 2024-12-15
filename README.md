@@ -7,6 +7,13 @@ bookdown::render_book("index.Rmd", "bookdown::epub_book",output_dir = "docs")
 bookdown::render_book("index.Rmd", "bookdown::pdf_book", output_dir = "docs")
 ```
 
+And then commit and push in RStudio or use RosyDev and usethis (if the git/github is configured correctly)...
+
+``` r
+RosyDev::fast_commit()
+usethis:::git_push()
+```
+
 ## Links
 
 -   Written with [bookdown](https://github.com/rstudio/bookdown "bookdown") R package

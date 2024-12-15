@@ -25,4 +25,5 @@ RosyDev::fast_commit()
 # Push =========================================================================
 usethis:::git_push()
 # scrap ========================================================================
+utils::browseURL("https://brandonerose.github.io/Data-Pipelines/")
 
