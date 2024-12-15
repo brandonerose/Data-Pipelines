@@ -20,7 +20,9 @@ bookdown::render_book("index.Rmd", "bookdown::pdf_book", output_dir = "docs")
 # ?bookdown::serve_book()
 bookdown::serve_book(port = 8787, in_session = T,preview = T,output_dir = "docs")
 utils::browseURL("http://127.0.0.1:8787")
-# Commit and push ==============================================================
+# Commit =======================================================================
+RosyDev::fast_commit()
+# Push =========================================================================
 RosyDev::fast_commit()
 usethis:::git_push()
 # scrap ========================================================================

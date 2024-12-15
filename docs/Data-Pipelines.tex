@@ -36,46 +36,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -129,87 +89,223 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{\texorpdfstring{What is \texttt{\{RosyREDCap\}}?}{What is \{RosyREDCap\}?}}\label{what-is-rosyredcap}
+\chapter{What is a Data Pipeline?}\label{what-is-a-data-pipeline}
 
-{[}\texttt{\{RosyREDCap\}}{]}
+A data pipeline is an intentionally designed process that transforms data from its input(s) to its output(s). A proper data pipeline has complexity that matches its aims. For any data project it's critical to have a \textbf{conceptual framework} and to \textbf{use the right tools}. This book will use the general concept and language of a Model-View-Controller framework to contextualize examples of effective data pipelines. What tools are ultimately chosen (intentionally or not) are a combination of cost, dependencies, security, familiarity, reusability, maintainability, scalabiltiy, and more.
 
-R and REDCap are both widely utilized in medicine, including basic science, clinical research, and clinal trials.
-Both have independent strengths, but together they can create powerful data pipelines.
-While several R packages exist for extracting data using the REDCap API, \texttt{\{RosyREDCap\}} stands out by offering comprehensive extraction of all metadata and data from any REDCap project into a standardized R list object, facilitating effortless downstream use in exports, imports, transformation, and applications.
-Three core aims of \texttt{\{RosyREDCap\}} are to
+\chapter{What is Model-View-Controller?}\label{what-is-model-view-controller}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\chapter{When is a Data Pipeline Needed?}\label{when-is-a-data-pipeline-needed}
+
+A project will increasingly benefit from a data pipeline the more longitudinal, important, sensitive it is. For example, a one-time personal project does not need a data pipeline. A clinical trial may have several interconnected data pipelines.
+
+\chapter{Applications as a data pipeline}\label{applications-as-a-data-pipeline}
+
+Most common software applications can be thought of as a \emph{controlled} data pipeline. Think of your bank website, a social media website, and the Epic Electronic Medical Record (EMR) as examples. Even if they don't necessarily use the MVC framework, they have different users, secure data model(s) on a backend server, a designed view on the frontend browser, and a series of controllers (computer programming and logic) that dictate the interactions between the view and the data model.
+
+One of the main highlights of this book is the versatility of REDCap, which can be thought of as both a model (data source) and an MVC application.
+
+\chapter{Authors}\label{authors}
+
+\begin{itemize}
 \tightlist
 \item
-  Maintain a local version of the database (DB) object by only calling recently updated records using the REDCap log.
+  Brandon Rose, MD, MPH
 \item
-  Allow imports of non-coded versions of the dataset using R or Excel/CSV.
-\item
-  Launch a shiny app that allows you to explore all of your REDCap projects.
-\end{enumerate}
+  Natalie Goulett
+\end{itemize}
 
-By leveraging the combined strengths of R and REDCap, users can maintain strong clinical data pipelines, collected and processed appropriately to improve research and patient care.
-RosyREDCap can be used as a base data object and data quality tool for most REDCap projects to aid in collection, monitoring, transformation, and analysis.
+\chapter{Users}\label{users}
 
-\section{Installing RosyREDCap}\label{installing-rosyredcap}
+In any data pipeline you should take stock of various users you have. You can't do it all on your own and if you can you shouldn't! The best work is produced by diverse teams with shared goals.
 
-\emph{Note: The current version of \texttt{\{RosyREDCap\}} used when writing this book is 1.0.0.9030, and some of the features presented in this book might not be available if you are using an older version, or be a little bit different if you have a newer version. Feel free to browse the package NEWS.}
+\section{Four Categories of Data Pipeline Users}\label{four-categories-of-data-pipeline-users}
 
-The stable release can be found on CRAN and installed with:
+The value of a team member has nothing to do with the categories below. However, in the context of data pipeline design you have four categories of users: End User, Basic User, Intermediate User, and Advanced User.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"RosyREDCap"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\subsection*{The End User}\label{the-end-user}
+\addcontentsline{toc}{subsection}{The End User}
 
-You can install the development version of RosyREDCap from GitHub by using the \texttt{\{remotes\}} package.
-Be sure to install \texttt{\{remotes\}} if you don't have it already.
+The end user may struggle to interact with the software directly. They may have limited technical proficiency or lack interest in learning the software at all. Despite this, they may be primary consumer of the outputs, such as visualizations, dashboards, reports, or data summaries. Their primary role is to use these outputs for decision-making or other purposes.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"brandonerose/RosyREDCap"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\subsection*{The Basic User}\label{the-basic-user}
+\addcontentsline{toc}{subsection}{The Basic User}
 
-Note that the version used at the time of writing this book is 1.0.0.9030.
-You can check what version you have installed with the following.
+The basic user can install and run the software with minimal guidance. They may not fully understand the inner workings of the tool but can follow instructions, execute straightforward tasks, and produce simple outputs if given clear directions. Troubleshooting or resolving errors is often challenging, and they rely on others for deeper technical help.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{packageVersion}\NormalTok{(}\StringTok{"RosyREDCap"}\NormalTok{)}
-\CommentTok{\#\textgreater{} [1] \textquotesingle{}1.0.0.9030\textquotesingle{}}
-\end{Highlighting}
-\end{Shaded}
+\subsection*{The Intermediate User}\label{the-intermediate-user}
+\addcontentsline{toc}{subsection}{The Intermediate User}
 
-The motivation behind \texttt{\{RosyREDCap\}} is that building a proof-of-concept application is easy, but \textbf{things change when the application becomes larger and more complex, and especially when you need to send that app to production}.
-Until recently there has not been any real framework for building and deploying production-grade \texttt{\{shiny\}} apps.
-This is where \texttt{\{RosyREDCap\}} comes into play: \textbf{offering \texttt{\{shiny\}} developers a toolkit for making a stable, easy-to-maintain, and robust production web application with R}.
-\texttt{\{RosyREDCap\}} has been developed to abstract away the most common engineering tasks (for example, module creation, addition and linking of an external CSS or JavaScript file, etc.), so you can focus on what matters: building the application.
-Once your application is ready to be deployed, \texttt{\{RosyREDCap\}} guides you through testing and brings tools for deploying to common platforms.
+The intermediate user is comfortable navigating the software independently. They can create scripts, automate simple workflows, and troubleshoot common errors. They've likely used the software to produce custom outputs (e.g., charts, reports, or transformations). They have some foundational understanding of how the software works but may not engage deeply with advanced topics like performance optimization, APIs, or integrations.
 
-If you have any issues, try downloading the most recent version of R at RStudtio and update all packages in RStudio.
-See \href{https://www.thecodingdocs.com/r/getting-started}{thecodingdocs.com/r/getting-started}.
+\subsection*{The Advanced User}\label{the-advanced-user}
+\addcontentsline{toc}{subsection}{The Advanced User}
 
-\chapter{Intended Uses}\label{intended-uses}
+The advanced user is highly proficient and can use the software to tackle complex problems. They understand how to customize, extend, and integrate it with other systems or tools. This includes creating reusable solutions like functions, modules, or pipelines. They may leverage APIs, manage databases, and optimize workflows, often serving as the go-to expert for solving challenging technical issues or innovating within their domain.
 
-RosyREDCap is for all three types of R users below (basic, intermediate, and advanced). For each type there is an \emph{intended} way of using the package, which may evolve over time.
+\section{Types of R Users as an Example}\label{types-of-r-users-as-an-example}
 
-\section*{The Basic R User}\label{the-basic-r-user}
-\addcontentsline{toc}{section}{The Basic R User}
+It's very important to gauge where you fall on the spectrum of R users before and during a project. You want to recognize your limitations so that more experienced users can accelerate your learning. Regardless of your current ability, the best way forward is with active learning with real projects.
 
-A basic R user is capable of installing R and RStudio on their computer. They may be very hesitant working through any errors or understanding ``how it all works''. However, they know how run some lines of code if the process is straight forward.
+\subsection*{The Never (End) R User}\label{the-never-end-r-user}
+\addcontentsline{toc}{subsection}{The Never (End) R User}
 
-\section*{The Intermediate R User}\label{the-intermediate-r-user}
-\addcontentsline{toc}{section}{The Intermediate R User}
+The never R user may struggle to download R and/or R Studio. They may have difficulty navigating software and file systems in general. Generally speaking they have no interest in even knowing what R is. However, this may be the \textbf{\emph{typical}} \textbf{end-user} and could be the primary audience of R output such as shiny apps, markdown reports, excel sheets etc.
+
+\subsection*{The Basic R User}\label{the-basic-r-user}
+\addcontentsline{toc}{subsection}{The Basic R User}
+
+The basic R user is capable of installing R and RStudio on their computer. They may be very hesitant working through any errors or understanding ``how it all works''. They likely prefer point-and-click software that they are more familiar with. However, they know how to use software and can run some lines of code if the process is straight forward enough.
+
+\subsection*{The Intermediate R User}\label{the-intermediate-r-user}
+\addcontentsline{toc}{subsection}{The Intermediate R User}
 
 An intermediate user knows how to create an R project and even has some scripts they have written themselves somewhere on their computer. The haven't gone down many rabbit holes but they know to make some ggplots and are capable of working through most common errors.
 
-\section*{The Advanced R User}\label{the-advanced-r-user}
-\addcontentsline{toc}{section}{The Advanced R User}
+\subsection*{The Advanced R User}\label{the-advanced-r-user}
+\addcontentsline{toc}{subsection}{The Advanced R User}
 
 An advanced R user understands how R packages work. They can write reusable functions and do complex tasks that may include API calls, data transformations, working with SQL and more.
+
+\section{How does this affect your data pipeline?}\label{how-does-this-affect-your-data-pipeline}
+
+You should tailor how you design and how you communicate your data pipeline based on the different users. If your team is all end users, then you should rely on commercial and free software to accomplish your goals. If you have many different types of users then you may have the opportunity to create more custom applications.
+
+\chapter{Models}\label{models}
+
+about models as a concept.
+
+\section{What makes a good model?}\label{what-makes-a-good-model}
+
+\section{Love the data you have}\label{love-the-data-you-have}
+
+Data is everywhere but you only have access to some of it. Getting access is often time consuming. Once you have access to data you should consistently assess its strengths, weaknesses, opportunities, and threats (SWOT). In the name of deliverables, you have to have endpoints. Your productivity will be judged by the consistent quality and quantity of work.
+
+\section{data sources}\label{data-sources}
+
+\section{EMR data (Relational)}\label{emr-data-relational}
+
+\section{Transactional vs Analytical Data}\label{transactional-vs-analytical-data}
+
+OLTP vs OLAP
+
+\section{Data Structure}\label{data-structure}
+
+\section{Metadata}\label{metadata}
+
+\subsection{Coded data}\label{coded-data}
+
+\section{REDCap}\label{redcap}
+
+\section{Other Examples}\label{other-examples}
+
+\subsection{Qualtrics}\label{qualtrics}
+
+\subsection{Google forms}\label{google-forms}
+
+\chapter{Views}\label{views}
+
+\section{plots}\label{plots}
+
+\subsection{static plots}\label{static-plots}
+
+\subsection{interactive plots}\label{interactive-plots}
+
+\section{Why is R our choice?}\label{why-is-r-our-choice}
+
+\chapter{Controllers}\label{controllers}
+
+\section{Zero Access}\label{zero-access}
+
+Proprietary software with no interest in you knowing their logic.
+
+\section{Pseudo Controllers}\label{pseudo-controllers}
+
+You can get some reporting
+
+\section{The Coding Languages!}\label{the-coding-languages}
+
+\subsection{R vs Python}\label{r-vs-python}
+
+\subsection{Why is R our choice?}\label{why-is-r-our-choice-1}
+
+\section{Application Program Interfaces (APIs)}\label{application-program-interfaces-apis}
+
+\chapter{Categorizing Software by MVC}\label{categorizing-software-by-mvc}
+
+\section{REDCap}\label{redcap-1}
+
+Category: MVC (End and Basic Users); Model (Intermediate and Advanced Users)
+Model: A-
+Security: A
+Log: A+
+Structure: B
+Metadata: A+
+Controller: A+
+Customization: C
+API: A+
+View: C+
+Customization: B
+User Rights: A+
+Public-Facing option: Yes
+Cost: Free for non-profit institutions who will host the server
+
+\section{SPSS}\label{spss}
+
+\section{Tableu}\label{tableu}
+
+\section{SASS}\label{sass}
+
+\section{STATA}\label{stata}
+
+\section{Microsoft Excel}\label{microsoft-excel}
+
+When to use: viewing and storing data, one time jobs such as designing your REDCap metadata
+Avoid for: data analysis
+
+\section{qualtrics}\label{qualtrics-1}
+
+\section{Power BI}\label{power-bi}
+
+\section{chat gpt}\label{chat-gpt}
+
+\chapter{Example Pipelines}\label{example-pipelines}
+
+\section{Pan-Sarcoma Database}\label{pan-sarcoma-database}
+
+\section{Quienticential Chart Review Project}\label{quienticential-chart-review-project}
+
+\section{Multi-instititional}\label{multi-instititional}
+
+\section{Report Back Letters}\label{report-back-letters}
+
+\section{Admissions Data}\label{admissions-data}
+
+\section{Running Data}\label{running-data}
+
+\chapter{Conclusion}\label{conclusion}
+
+\section{choosing your tools}\label{choosing-your-tools}
+
+\section{putting it all together}\label{putting-it-all-together}
+
+\section{Resources for more learning}\label{resources-for-more-learning}
+
+\chapter{About the Authors}\label{about-the-authors}
+
+\section{Brandon Rose, MD, MPH}\label{brandon-rose-md-mph}
+
+Dr.~Rose earned his MD/MPH at the University of Miami Miller School of Medicine. He is currently a third-year internal medicine resident at Jackson Memorial Hospital and is a rising fellow in hematology and oncology at the University of Texas Southwestern Medical Center. He specializes in clinical data pipelines and R computer programming and is passionate about precision oncology, disparities research, and quality improvement. He has led numerous projects with sarcoma, thoracic oncology, neuroendocrine tumor, and the Firefighter Cancer Initiative.
+
+\section{Natalie Goulett, BS}\label{natalie-goulett-bs}
+
+Natalie is a healthcare simulation operations specialist and MPH student majoring in biostatistics at Florida International University. As a data science instructor, Natalie helps investigators conduct efficient and reproducible research using R. Her research interests include the impact of occupational hazards on first responders and the promotion of equity and quality improvement in research. Outside of her academic pursuits, Natalie enjoys live music and scuba diving.
+
+\section{}\label{section}
+
+\chapter{Glossary}\label{glossary}
+
+Table here of important terms
 
   \bibliography{book.bib,packages.bib}
 
