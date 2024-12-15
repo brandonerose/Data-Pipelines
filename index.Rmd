@@ -13,55 +13,26 @@ github-repo: brandonerose/Data-Pipelines
 favicon: images/Rosyverse.png
 ---
 
-# What is `{RosyREDCap}`?
+# What is a Data Pipeline?
 
-<!-- <img src="images" class="left" width="20%"/> -->
-[`{RosyREDCap}`] <img src="images/RosyREDCap.png" align="right" height="150" />
+A data pipeline is an intentionally designed process that transforms data from its input(s) to its output(s). A proper data pipeline has complexity that matches its aims. For any data project it's critical to have a **conceptual framework** and to **use the right tools**. This book will use the general concept and language of a Model-View-Controller framework to contextualize examples of effective data pipelines. What tools are ultimately chosen (intentionally or not) are a combination of cost, dependencies, security, familiarity, reusability, maintainability, scalabiltiy, and more.  
 
-R and REDCap are both widely utilized in medicine, including basic science, clinical research, and clinal trials.
-Both have independent strengths, but together they can create powerful data pipelines.
-While several R packages exist for extracting data using the REDCap API, `{RosyREDCap}` stands out by offering comprehensive extraction of all metadata and data from any REDCap project into a standardized R list object, facilitating effortless downstream use in exports, imports, transformation, and applications.
-Three core aims of `{RosyREDCap}` are to
+# What is Model-View-Controller?
 
-1.  Maintain a local version of the database (DB) object by only calling recently updated records using the REDCap log.
-2.  Allow imports of non-coded versions of the dataset using R or Excel/CSV.
-3.  Launch a shiny app that allows you to explore all of your REDCap projects.
+# When is a Data Pipeline Needed?
 
-By leveraging the combined strengths of R and REDCap, users can maintain strong clinical data pipelines, collected and processed appropriately to improve research and patient care.
-RosyREDCap can be used as a base data object and data quality tool for most REDCap projects to aid in collection, monitoring, transformation, and analysis.
+A project will increasingly benefit from a data pipeline the more longitudinal, important, sensitive it is. For example, a one-time personal project does not need a data pipeline. A clinical trial may have several interconnected data pipelines.
 
-## Installing RosyREDCap
+# Applications as a data pipeline
 
-*Note: The current version of `{RosyREDCap}` used when writing this book is `r packageVersion("RosyREDCap")`, and some of the features presented in this book might not be available if you are using an older version, or be a little bit different if you have a newer version. Feel free to browse the package NEWS.*
+Most common software applications can be thought of as a *controlled* data pipeline. Think of your bank website, a social media website, and the Epic Electronic Medical Record (EMR) as examples. Even if they don't necessarily use the MVC framework, they have different users, secure data model(s) on a backend server, a designed view on the frontend browser, and a series of controllers (computer programming and logic) that dictate the interactions between the view and the data model.
 
-The stable release can be found on CRAN and installed with:
+One of the main highlights of this book is the versatility of REDCap, which can be thought of as both a model (data source) and an MVC application. 
 
-```{r, eval=FALSE}
-install.packages("RosyREDCap")
-```
+# Authors
 
-You can install the development version of RosyREDCap from GitHub by using the `{remotes}` package.
-Be sure to install `{remotes}` if you don't have it already.
-
-```{r, eval=FALSE}
-remotes::install_github("brandonerose/RosyREDCap")
-```
-
-Note that the version used at the time of writing this book is `r packageVersion("RosyREDCap")`.
-You can check what version you have installed with the following.
-
-```{r}
-packageVersion("RosyREDCap")
-```
-
-The motivation behind `{RosyREDCap}` is that building a proof-of-concept application is easy, but **things change when the application becomes larger and more complex, and especially when you need to send that app to production**.
-Until recently there has not been any real framework for building and deploying production-grade `{shiny}` apps.
-This is where `{RosyREDCap}` comes into play: **offering `{shiny}` developers a toolkit for making a stable, easy-to-maintain, and robust production web application with R**.
-`{RosyREDCap}` has been developed to abstract away the most common engineering tasks (for example, module creation, addition and linking of an external CSS or JavaScript file, etc.), so you can focus on what matters: building the application.
-Once your application is ready to be deployed, `{RosyREDCap}` guides you through testing and brings tools for deploying to common platforms.
-
-If you have any issues, try downloading the most recent version of R at RStudtio and update all packages in RStudio.
-See [thecodingdocs.com/r/getting-started](https://www.thecodingdocs.com/r/getting-started "R Getting Started").
+-   Brandon Rose, MD, MPH
+-   Natalie Goulett
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Users | Data Pipelines: Using a Model-View-Controller Framework in R</title>
+<meta name="author" content="Brandon Rose and Natalie Goulett">
+<meta name="description" content="In any data pipeline you should take stock of various users you have. You can’t do it all on your own and if you can you shouldn’t! The best work is produced by diverse teams with shared goals. ...">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Users | Data Pipelines: Using a Model-View-Controller Framework in R">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://brandonerose.github.io/Data-Pipelines/users.html">
+<meta property="og:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
+<meta property="og:description" content="In any data pipeline you should take stock of various users you have. You can’t do it all on your own and if you can you shouldn’t! The best work is produced by diverse teams with shared goals. ...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Users | Data Pipelines: Using a Model-View-Controller Framework in R">
+<meta name="twitter:description" content="In any data pipeline you should take stock of various users you have. You can’t do it all on your own and if you can you shouldn’t! The best work is produced by diverse teams with shared goals. ...">
+<meta name="twitter:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Pipelines: Using a Model-View-Controller Framework in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> What is a Data Pipeline?</a></li>
+<li><a class="" href="what-is-model-view-controller.html"><span class="header-section-number">2</span> What is Model-View-Controller?</a></li>
+<li><a class="" href="when-is-a-data-pipeline-needed.html"><span class="header-section-number">3</span> When is a Data Pipeline Needed?</a></li>
+<li><a class="" href="applications-as-a-data-pipeline.html"><span class="header-section-number">4</span> Applications as a data pipeline</a></li>
+<li><a class="" href="authors.html"><span class="header-section-number">5</span> Authors</a></li>
+<li><a class="active" href="users.html"><span class="header-section-number">6</span> Users</a></li>
+<li><a class="" href="models.html"><span class="header-section-number">7</span> Models</a></li>
+<li><a class="" href="views.html"><span class="header-section-number">8</span> Views</a></li>
+<li><a class="" href="controllers.html"><span class="header-section-number">9</span> Controllers</a></li>
+<li><a class="" href="categorizing-software-by-mvc.html"><span class="header-section-number">10</span> Categorizing Software by MVC</a></li>
+<li><a class="" href="example-pipelines.html"><span class="header-section-number">11</span> Example Pipelines</a></li>
+<li><a class="" href="conclusion.html"><span class="header-section-number">12</span> Conclusion</a></li>
+<li><a class="" href="about-the-authors.html"><span class="header-section-number">13</span> About the Authors</a></li>
+<li><a class="" href="glossary.html"><span class="header-section-number">14</span> Glossary</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/brandonerose/Data-Pipelines">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="users" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Users<a class="anchor" aria-label="anchor" href="#users"><i class="fas fa-link"></i></a>
+</h1>
+<p>In any data pipeline you should take stock of various users you have. You can’t do it all on your own and if you can you shouldn’t! The best work is produced by diverse teams with shared goals.</p>
+<div id="four-categories-of-data-pipeline-users" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Four Categories of Data Pipeline Users<a class="anchor" aria-label="anchor" href="#four-categories-of-data-pipeline-users"><i class="fas fa-link"></i></a>
+</h2>
+<p>The value of a team member has nothing to do with the categories below. However, in the context of data pipeline design you have four categories of users: End User, Basic User, Intermediate User, and Advanced User.</p>
+<div id="the-end-user" class="section level3 unnumbered">
+<h3>The End User<a class="anchor" aria-label="anchor" href="#the-end-user"><i class="fas fa-link"></i></a>
+</h3>
+<p>The end user may struggle to interact with the software directly. They may have limited technical proficiency or lack interest in learning the software at all. Despite this, they may be primary consumer of the outputs, such as visualizations, dashboards, reports, or data summaries. Their primary role is to use these outputs for decision-making or other purposes.</p>
+</div>
+<div id="the-basic-user" class="section level3 unnumbered">
+<h3>The Basic User<a class="anchor" aria-label="anchor" href="#the-basic-user"><i class="fas fa-link"></i></a>
+</h3>
+<p>The basic user can install and run the software with minimal guidance. They may not fully understand the inner workings of the tool but can follow instructions, execute straightforward tasks, and produce simple outputs if given clear directions. Troubleshooting or resolving errors is often challenging, and they rely on others for deeper technical help.</p>
+</div>
+<div id="the-intermediate-user" class="section level3 unnumbered">
+<h3>The Intermediate User<a class="anchor" aria-label="anchor" href="#the-intermediate-user"><i class="fas fa-link"></i></a>
+</h3>
+<p>The intermediate user is comfortable navigating the software independently. They can create scripts, automate simple workflows, and troubleshoot common errors. They’ve likely used the software to produce custom outputs (e.g., charts, reports, or transformations). They have some foundational understanding of how the software works but may not engage deeply with advanced topics like performance optimization, APIs, or integrations.</p>
+</div>
+<div id="the-advanced-user" class="section level3 unnumbered">
+<h3>The Advanced User<a class="anchor" aria-label="anchor" href="#the-advanced-user"><i class="fas fa-link"></i></a>
+</h3>
+<p>The advanced user is highly proficient and can use the software to tackle complex problems. They understand how to customize, extend, and integrate it with other systems or tools. This includes creating reusable solutions like functions, modules, or pipelines. They may leverage APIs, manage databases, and optimize workflows, often serving as the go-to expert for solving challenging technical issues or innovating within their domain.</p>
+</div>
+</div>
+<div id="types-of-r-users-as-an-example" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Types of R Users as an Example<a class="anchor" aria-label="anchor" href="#types-of-r-users-as-an-example"><i class="fas fa-link"></i></a>
+</h2>
+<p>It’s very important to gauge where you fall on the spectrum of R users before and during a project. You want to recognize your limitations so that more experienced users can accelerate your learning. Regardless of your current ability, the best way forward is with active learning with real projects.</p>
+<div id="the-never-end-r-user" class="section level3 unnumbered">
+<h3>The Never (End) R User<a class="anchor" aria-label="anchor" href="#the-never-end-r-user"><i class="fas fa-link"></i></a>
+</h3>
+<p>The never R user may struggle to download R and/or R Studio. They may have difficulty navigating software and file systems in general. Generally speaking they have no interest in even knowing what R is. However, this may be the <strong><em>typical</em></strong> <strong>end-user</strong> and could be the primary audience of R output such as shiny apps, markdown reports, excel sheets etc.</p>
+</div>
+<div id="the-basic-r-user" class="section level3 unnumbered">
+<h3>The Basic R User<a class="anchor" aria-label="anchor" href="#the-basic-r-user"><i class="fas fa-link"></i></a>
+</h3>
+<p>The basic R user is capable of installing R and RStudio on their computer. They may be very hesitant working through any errors or understanding “how it all works”. They likely prefer point-and-click software that they are more familiar with. However, they know how to use software and can run some lines of code if the process is straight forward enough.</p>
+</div>
+<div id="the-intermediate-r-user" class="section level3 unnumbered">
+<h3>The Intermediate R User<a class="anchor" aria-label="anchor" href="#the-intermediate-r-user"><i class="fas fa-link"></i></a>
+</h3>
+<p>An intermediate user knows how to create an R project and even has some scripts they have written themselves somewhere on their computer. The haven’t gone down many rabbit holes but they know to make some ggplots and are capable of working through most common errors.</p>
+</div>
+<div id="the-advanced-r-user" class="section level3 unnumbered">
+<h3>The Advanced R User<a class="anchor" aria-label="anchor" href="#the-advanced-r-user"><i class="fas fa-link"></i></a>
+</h3>
+<p>An advanced R user understands how R packages work. They can write reusable functions and do complex tasks that may include API calls, data transformations, working with SQL and more.</p>
+</div>
+</div>
+<div id="how-does-this-affect-your-data-pipeline" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> How does this affect your data pipeline?<a class="anchor" aria-label="anchor" href="#how-does-this-affect-your-data-pipeline"><i class="fas fa-link"></i></a>
+</h2>
+<p>You should tailor how you design and how you communicate your data pipeline based on the different users. If your team is all end users, then you should rely on commercial and free software to accomplish your goals. If you have many different types of users then you may have the opportunity to create more custom applications.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="authors.html"><span class="header-section-number">5</span> Authors</a></div>
+<div class="next"><a href="models.html"><span class="header-section-number">7</span> Models</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#users"><span class="header-section-number">6</span> Users</a></li>
+<li>
+<a class="nav-link" href="#four-categories-of-data-pipeline-users"><span class="header-section-number">6.1</span> Four Categories of Data Pipeline Users</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-end-user">The End User</a></li>
+<li><a class="nav-link" href="#the-basic-user">The Basic User</a></li>
+<li><a class="nav-link" href="#the-intermediate-user">The Intermediate User</a></li>
+<li><a class="nav-link" href="#the-advanced-user">The Advanced User</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#types-of-r-users-as-an-example"><span class="header-section-number">6.2</span> Types of R Users as an Example</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-never-end-r-user">The Never (End) R User</a></li>
+<li><a class="nav-link" href="#the-basic-r-user">The Basic R User</a></li>
+<li><a class="nav-link" href="#the-intermediate-r-user">The Intermediate R User</a></li>
+<li><a class="nav-link" href="#the-advanced-r-user">The Advanced R User</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#how-does-this-affect-your-data-pipeline"><span class="header-section-number">6.3</span> How does this affect your data pipeline?</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/brandonerose/Data-Pipelines/blob/master/01-Users.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/brandonerose/Data-Pipelines/edit/master/01-Users.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Pipelines: Using a Model-View-Controller Framework in R</strong>" was written by Brandon Rose and Natalie Goulett. It was last built on 12/2024.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

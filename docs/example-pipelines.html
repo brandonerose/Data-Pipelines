@@ -4,18 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 1 What is a Data Pipeline? | Data Pipelines: Using a Model-View-Controller Framework in R</title>
+<title>Chapter 11 Example Pipelines | Data Pipelines: Using a Model-View-Controller Framework in R</title>
 <meta name="author" content="Brandon Rose and Natalie Goulett">
-<meta name="description" content="An R package pairs the best of R with REDCap API.">
+<meta name="description" content="11.1 Pan-Sarcoma Database   11.2 Quienticential Chart Review Project   11.3 Multi-instititional   11.4 Report Back Letters   11.5 Admissions Data   11.6 Running Data">
 <meta name="generator" content="bookdown 0.41 with bs4_book()">
-<meta property="og:title" content="Chapter 1 What is a Data Pipeline? | Data Pipelines: Using a Model-View-Controller Framework in R">
+<meta property="og:title" content="Chapter 11 Example Pipelines | Data Pipelines: Using a Model-View-Controller Framework in R">
 <meta property="og:type" content="book">
-<meta property="og:url" content="https://brandonerose.github.io/Data-Pipelines/">
+<meta property="og:url" content="https://brandonerose.github.io/Data-Pipelines/example-pipelines.html">
 <meta property="og:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
-<meta property="og:description" content="An R package pairs the best of R with REDCap API.">
+<meta property="og:description" content="11.1 Pan-Sarcoma Database   11.2 Quienticential Chart Review Project   11.3 Multi-instititional   11.4 Report Back Letters   11.5 Admissions Data   11.6 Running Data">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 1 What is a Data Pipeline? | Data Pipelines: Using a Model-View-Controller Framework in R">
-<meta name="twitter:description" content="An R package pairs the best of R with REDCap API.">
+<meta name="twitter:title" content="Chapter 11 Example Pipelines | Data Pipelines: Using a Model-View-Controller Framework in R">
+<meta name="twitter:description" content="11.1 Pan-Sarcoma Database   11.2 Quienticential Chart Review Project   11.3 Multi-instititional   11.4 Report Back Letters   11.5 Admissions Data   11.6 Running Data">
 <meta name="twitter:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html"><span class="header-section-number">1</span> What is a Data Pipeline?</a></li>
+<li><a class="" href="index.html"><span class="header-section-number">1</span> What is a Data Pipeline?</a></li>
 <li><a class="" href="what-is-model-view-controller.html"><span class="header-section-number">2</span> What is Model-View-Controller?</a></li>
 <li><a class="" href="when-is-a-data-pipeline-needed.html"><span class="header-section-number">3</span> When is a Data Pipeline Needed?</a></li>
 <li><a class="" href="applications-as-a-data-pipeline.html"><span class="header-section-number">4</span> Applications as a data pipeline</a></li>
@@ -56,7 +56,7 @@
 <li><a class="" href="views.html"><span class="header-section-number">8</span> Views</a></li>
 <li><a class="" href="controllers.html"><span class="header-section-number">9</span> Controllers</a></li>
 <li><a class="" href="categorizing-software-by-mvc.html"><span class="header-section-number">10</span> Categorizing Software by MVC</a></li>
-<li><a class="" href="example-pipelines.html"><span class="header-section-number">11</span> Example Pipelines</a></li>
+<li><a class="active" href="example-pipelines.html"><span class="header-section-number">11</span> Example Pipelines</a></li>
 <li><a class="" href="conclusion.html"><span class="header-section-number">12</span> Conclusion</a></li>
 <li><a class="" href="about-the-authors.html"><span class="header-section-number">13</span> About the Authors</a></li>
 <li><a class="" href="glossary.html"><span class="header-section-number">14</span> Glossary</a></li>
@@ -68,23 +68,61 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="what-is-a-data-pipeline" class="section level1" number="1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="example-pipelines" class="section level1" number="11">
 <h1>
-<span class="header-section-number">1</span> What is a Data Pipeline?<a class="anchor" aria-label="anchor" href="#what-is-a-data-pipeline"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11</span> Example Pipelines<a class="anchor" aria-label="anchor" href="#example-pipelines"><i class="fas fa-link"></i></a>
 </h1>
-<p>A data pipeline is an intentionally designed process that transforms data from its input(s) to its output(s). A proper data pipeline has complexity that matches its aims. For any data project it’s critical to have a <strong>conceptual framework</strong> and to <strong>use the right tools</strong>. This book will use the general concept and language of a Model-View-Controller framework to contextualize examples of effective data pipelines. What tools are ultimately chosen (intentionally or not) are a combination of cost, dependencies, security, familiarity, reusability, maintainability, scalabiltiy, and more.</p>
+<div id="pan-sarcoma-database" class="section level2" number="11.1">
+<h2>
+<span class="header-section-number">11.1</span> Pan-Sarcoma Database<a class="anchor" aria-label="anchor" href="#pan-sarcoma-database"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="quienticential-chart-review-project" class="section level2" number="11.2">
+<h2>
+<span class="header-section-number">11.2</span> Quienticential Chart Review Project<a class="anchor" aria-label="anchor" href="#quienticential-chart-review-project"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="multi-instititional" class="section level2" number="11.3">
+<h2>
+<span class="header-section-number">11.3</span> Multi-instititional<a class="anchor" aria-label="anchor" href="#multi-instititional"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="report-back-letters" class="section level2" number="11.4">
+<h2>
+<span class="header-section-number">11.4</span> Report Back Letters<a class="anchor" aria-label="anchor" href="#report-back-letters"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="admissions-data" class="section level2" number="11.5">
+<h2>
+<span class="header-section-number">11.5</span> Admissions Data<a class="anchor" aria-label="anchor" href="#admissions-data"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="running-data" class="section level2" number="11.6">
+<h2>
+<span class="header-section-number">11.6</span> Running Data<a class="anchor" aria-label="anchor" href="#running-data"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="next"><a href="what-is-model-view-controller.html"><span class="header-section-number">2</span> What is Model-View-Controller?</a></div>
+<div class="prev"><a href="categorizing-software-by-mvc.html"><span class="header-section-number">10</span> Categorizing Software by MVC</a></div>
+<div class="next"><a href="conclusion.html"><span class="header-section-number">12</span> Conclusion</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#what-is-a-data-pipeline"><span class="header-section-number">1</span> What is a Data Pipeline?</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-pipelines"><span class="header-section-number">11</span> Example Pipelines</a></li>
+<li><a class="nav-link" href="#pan-sarcoma-database"><span class="header-section-number">11.1</span> Pan-Sarcoma Database</a></li>
+<li><a class="nav-link" href="#quienticential-chart-review-project"><span class="header-section-number">11.2</span> Quienticential Chart Review Project</a></li>
+<li><a class="nav-link" href="#multi-instititional"><span class="header-section-number">11.3</span> Multi-instititional</a></li>
+<li><a class="nav-link" href="#report-back-letters"><span class="header-section-number">11.4</span> Report Back Letters</a></li>
+<li><a class="nav-link" href="#admissions-data"><span class="header-section-number">11.5</span> Admissions Data</a></li>
+<li><a class="nav-link" href="#running-data"><span class="header-section-number">11.6</span> Running Data</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/brandonerose/Data-Pipelines/blob/master/index.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/brandonerose/Data-Pipelines/edit/master/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/brandonerose/Data-Pipelines/blob/master/06-Examples.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/brandonerose/Data-Pipelines/edit/master/06-Examples.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
