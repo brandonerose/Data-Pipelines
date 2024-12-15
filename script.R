@@ -1,31 +1,27 @@
-
+# refresh packages ======================
+remotes::install_github("brandonerose/Rosyverse")
+remotes::install_github("brandonerose/RosyDev")
+#install.packages("devtools")
+#install.packages("usethis")
+#install.packages("pkgdown")
+Rosyverse::update_all()
+.rs.restartR()
+# Create =======================================================================
 path <- getwd()
 bookdown::create_bs4_book(path)
 #bookdown::create_gitbook(path)
-# bookdown::render_book(output_dir = "docs")
-# bookdown::render_book(output_format = ,output_dir = "docs")
-# bookdown::pdf_book()
+usethis::use_git()
+usethis::use_github()
+# Render ==============================================
 bookdown::render_book("index.Rmd", "bookdown::bs4_book",output_dir = "docs")
 bookdown::render_book("index.Rmd", "bookdown::epub_book",output_dir = "docs")
 bookdown::render_book("index.Rmd", "bookdown::pdf_book", output_dir = "docs")
-
+# Serve locally ================================================================
 # ?bookdown::serve_book()
 bookdown::serve_book(port = 8787, in_session = T,preview = T,output_dir = "docs")
 utils::browseURL("http://127.0.0.1:8787")
+# Commit and push ==============================================================
 RosyDev::fast_commit()
-usethis::use_git()
-usethis::use_github()
+usethis:::git_push()
+# scrap ========================================================================
 
-
-# scrap ==============
-# bookdown::gitbook:
-#   css: style.css
-#   config:
-#     toc:
-#       before: |
-#         <li><a href="./">RosyREDCap</a></li>
-#       after: |
-#         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-#     edit: https://github.com/brandonerose/RosyREDCap/edit/gh-pages/%s
-#     download: ["pdf", "epub"]
-#     split_by: none
