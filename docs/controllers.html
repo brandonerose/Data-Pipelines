@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 5 Controllers | Data Pipelines: Using a Model-View-Controller Framework in R</title>
 <meta name="author" content="Brandon Rose and Natalie Goulett">
-<meta name="description" content="5.1 Zero Access Proprietary software with no interest in you knowing their logic.  5.2 Pseudo Controllers You can get some reporting  5.3 The Coding Languages!  5.3.1 R vs Python   5.3.2 Why is R...">
+<meta name="description" content="5.1 Zero Access Proprietary software with no interest in you knowing their logic.  5.2 Pseudo Controllers You can get some reporting  5.3 The Coding Languages!   5.4 R   5.5 Python   5.6 SQL ...">
 <meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Controllers | Data Pipelines: Using a Model-View-Controller Framework in R">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://brandonerose.github.io/Data-Pipelines/controllers.html">
 <meta property="og:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
-<meta property="og:description" content="5.1 Zero Access Proprietary software with no interest in you knowing their logic.  5.2 Pseudo Controllers You can get some reporting  5.3 The Coding Languages!  5.3.1 R vs Python   5.3.2 Why is R...">
+<meta property="og:description" content="5.1 Zero Access Proprietary software with no interest in you knowing their logic.  5.2 Pseudo Controllers You can get some reporting  5.3 The Coding Languages!   5.4 R   5.5 Python   5.6 SQL ...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 5 Controllers | Data Pipelines: Using a Model-View-Controller Framework in R">
-<meta name="twitter:description" content="5.1 Zero Access Proprietary software with no interest in you knowing their logic.  5.2 Pseudo Controllers You can get some reporting  5.3 The Coding Languages!  5.3.1 R vs Python   5.3.2 Why is R...">
+<meta name="twitter:description" content="5.1 Zero Access Proprietary software with no interest in you knowing their logic.  5.2 Pseudo Controllers You can get some reporting  5.3 The Coding Languages!   5.4 R   5.5 Python   5.6 SQL ...">
 <meta name="twitter:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -84,20 +84,35 @@
 <h2>
 <span class="header-section-number">5.3</span> The Coding Languages!<a class="anchor" aria-label="anchor" href="#the-coding-languages"><i class="fas fa-link"></i></a>
 </h2>
-<div id="r-vs-python" class="section level3" number="5.3.1">
-<h3>
-<span class="header-section-number">5.3.1</span> R vs Python<a class="anchor" aria-label="anchor" href="#r-vs-python"><i class="fas fa-link"></i></a>
-</h3>
 </div>
-<div id="why-is-r-our-choice-1" class="section level3" number="5.3.2">
-<h3>
-<span class="header-section-number">5.3.2</span> Why is R our choice?<a class="anchor" aria-label="anchor" href="#why-is-r-our-choice-1"><i class="fas fa-link"></i></a>
-</h3>
-</div>
-</div>
-<div id="application-program-interfaces-apis" class="section level2" number="5.4">
+<div id="r" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">5.4</span> Application Program Interfaces (APIs)<a class="anchor" aria-label="anchor" href="#application-program-interfaces-apis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> R<a class="anchor" aria-label="anchor" href="#r"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="python" class="section level2" number="5.5">
+<h2>
+<span class="header-section-number">5.5</span> Python<a class="anchor" aria-label="anchor" href="#python"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="sql" class="section level2" number="5.6">
+<h2>
+<span class="header-section-number">5.6</span> SQL<a class="anchor" aria-label="anchor" href="#sql"><i class="fas fa-link"></i></a>
+</h2>
+<div id="r-vs-python" class="section level3" number="5.6.1">
+<h3>
+<span class="header-section-number">5.6.1</span> R vs Python<a class="anchor" aria-label="anchor" href="#r-vs-python"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="why-is-r-our-choice-1" class="section level3" number="5.6.2">
+<h3>
+<span class="header-section-number">5.6.2</span> Why is R our choice?<a class="anchor" aria-label="anchor" href="#why-is-r-our-choice-1"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+</div>
+<div id="application-program-interfaces-apis" class="section level2" number="5.7">
+<h2>
+<span class="header-section-number">5.7</span> Application Program Interfaces (APIs)<a class="anchor" aria-label="anchor" href="#application-program-interfaces-apis"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -111,13 +126,16 @@
 <li><a class="nav-link" href="#controllers"><span class="header-section-number">5</span> Controllers</a></li>
 <li><a class="nav-link" href="#zero-access"><span class="header-section-number">5.1</span> Zero Access</a></li>
 <li><a class="nav-link" href="#pseudo-controllers"><span class="header-section-number">5.2</span> Pseudo Controllers</a></li>
+<li><a class="nav-link" href="#the-coding-languages"><span class="header-section-number">5.3</span> The Coding Languages!</a></li>
+<li><a class="nav-link" href="#r"><span class="header-section-number">5.4</span> R</a></li>
+<li><a class="nav-link" href="#python"><span class="header-section-number">5.5</span> Python</a></li>
 <li>
-<a class="nav-link" href="#the-coding-languages"><span class="header-section-number">5.3</span> The Coding Languages!</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#r-vs-python"><span class="header-section-number">5.3.1</span> R vs Python</a></li>
-<li><a class="nav-link" href="#why-is-r-our-choice-1"><span class="header-section-number">5.3.2</span> Why is R our choice?</a></li>
+<a class="nav-link" href="#sql"><span class="header-section-number">5.6</span> SQL</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#r-vs-python"><span class="header-section-number">5.6.1</span> R vs Python</a></li>
+<li><a class="nav-link" href="#why-is-r-our-choice-1"><span class="header-section-number">5.6.2</span> Why is R our choice?</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#application-program-interfaces-apis"><span class="header-section-number">5.4</span> Application Program Interfaces (APIs)</a></li>
+<li><a class="nav-link" href="#application-program-interfaces-apis"><span class="header-section-number">5.7</span> Application Program Interfaces (APIs)</a></li>
 </ul>
 
       <div class="book-extra">

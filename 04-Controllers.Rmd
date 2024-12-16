@@ -8,6 +8,11 @@ You can get some reporting
 
 ## The Coding Languages!
 
+## R
+
+## Python
+
+## SQL
 
 ### R vs Python 
 

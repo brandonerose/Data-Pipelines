@@ -1,3 +1,6 @@
 # Glossary
 
-Table here of important terms
+Application Program Interface (API)
+
+Integration
+

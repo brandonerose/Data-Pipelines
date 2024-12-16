@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 3 Models | Data Pipelines: Using a Model-View-Controller Framework in R</title>
 <meta name="author" content="Brandon Rose and Natalie Goulett">
-<meta name="description" content="about models as a concept.  3.1 What makes a good model?   3.2 Love the data you have Data is everywhere but you only have access to some of it. Getting access is often time consuming. Once you...">
+<meta name="description" content="Think of your model(s) at the physical location of raw data and metadata. In the more formal sense, there is an entire field of data engineering and science that has to do with database design and...">
 <meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="Chapter 3 Models | Data Pipelines: Using a Model-View-Controller Framework in R">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://brandonerose.github.io/Data-Pipelines/models.html">
 <meta property="og:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
-<meta property="og:description" content="about models as a concept.  3.1 What makes a good model?   3.2 Love the data you have Data is everywhere but you only have access to some of it. Getting access is often time consuming. Once you...">
+<meta property="og:description" content="Think of your model(s) at the physical location of raw data and metadata. In the more formal sense, there is an entire field of data engineering and science that has to do with database design and...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 3 Models | Data Pipelines: Using a Model-View-Controller Framework in R">
-<meta name="twitter:description" content="about models as a concept.  3.1 What makes a good model?   3.2 Love the data you have Data is everywhere but you only have access to some of it. Getting access is often time consuming. Once you...">
+<meta name="twitter:description" content="Think of your model(s) at the physical location of raw data and metadata. In the more formal sense, there is an entire field of data engineering and science that has to do with database design and...">
 <meta name="twitter:image" content="https://brandonerose.github.io/Data-Pipelines/images/TCDblack.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -68,7 +68,7 @@
 <h1>
 <span class="header-section-number">3</span> Models<a class="anchor" aria-label="anchor" href="#models"><i class="fas fa-link"></i></a>
 </h1>
-<p>about models as a concept.</p>
+<p>Think of your model(s) at the physical location of raw data and metadata. In the more formal sense, there is an entire field of data engineering and science that has to do with database design and modeling. An excellent way to get your feet wet is understanding database normalization and take a look at some entity-relationship diagrams. You will quickly realize the limitations of your Frankenstein multi-tab Excel sheet.</p>
 <div id="what-makes-a-good-model" class="section level2" number="3.1">
 <h2>
 <span class="header-section-number">3.1</span> What makes a good model?<a class="anchor" aria-label="anchor" href="#what-makes-a-good-model"><i class="fas fa-link"></i></a>
@@ -82,7 +82,7 @@
 </div>
 <div id="data-sources" class="section level2" number="3.3">
 <h2>
-<span class="header-section-number">3.3</span> data sources<a class="anchor" aria-label="anchor" href="#data-sources"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3</span> Data sources<a class="anchor" aria-label="anchor" href="#data-sources"><i class="fas fa-link"></i></a>
 </h2>
 </div>
 <div id="emr-data-relational" class="section level2" number="3.4">
@@ -90,47 +90,94 @@
 <span class="header-section-number">3.4</span> EMR data (Relational)<a class="anchor" aria-label="anchor" href="#emr-data-relational"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="transactional-vs-analytical-data" class="section level2" number="3.5">
+<div id="sql-database" class="section level2" number="3.5">
 <h2>
-<span class="header-section-number">3.5</span> Transactional vs Analytical Data<a class="anchor" aria-label="anchor" href="#transactional-vs-analytical-data"><i class="fas fa-link"></i></a>
-</h2>
-<p>OLTP vs OLAP</p>
-</div>
-<div id="data-structure" class="section level2" number="3.6">
-<h2>
-<span class="header-section-number">3.6</span> Data Structure<a class="anchor" aria-label="anchor" href="#data-structure"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.5</span> SQL database<a class="anchor" aria-label="anchor" href="#sql-database"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="metadata" class="section level2" number="3.7">
+<div id="transactional-vs-analytical-data" class="section level2" number="3.6">
 <h2>
-<span class="header-section-number">3.7</span> Metadata<a class="anchor" aria-label="anchor" href="#metadata"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.6</span> Transactional vs Analytical Data<a class="anchor" aria-label="anchor" href="#transactional-vs-analytical-data"><i class="fas fa-link"></i></a>
 </h2>
-<div id="coded-data" class="section level3" number="3.7.1">
+<p>OLTP and OLAP</p>
+</div>
+<div id="data-structure" class="section level2" number="3.7">
+<h2>
+<span class="header-section-number">3.7</span> Data Structure<a class="anchor" aria-label="anchor" href="#data-structure"><i class="fas fa-link"></i></a>
+</h2>
+<div id="widehorizontalde-normalized-data" class="section level3" number="3.7.1">
 <h3>
-<span class="header-section-number">3.7.1</span> Coded data<a class="anchor" aria-label="anchor" href="#coded-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.7.1</span> Wide/Horizontal/De-Normalized Data<a class="anchor" aria-label="anchor" href="#widehorizontalde-normalized-data"><i class="fas fa-link"></i></a>
+</h3>
+<p>Excel. Every row is a person and every column is information about them.</p>
+</div>
+<div id="longverticalnormalized-data" class="section level3" number="3.7.2">
+<h3>
+<span class="header-section-number">3.7.2</span> Long/Vertical/Normalized Data<a class="anchor" aria-label="anchor" href="#longverticalnormalized-data"><i class="fas fa-link"></i></a>
+</h3>
+<p>Separate related tables</p>
+</div>
+</div>
+<div id="metadata" class="section level2" number="3.8">
+<h2>
+<span class="header-section-number">3.8</span> Metadata<a class="anchor" aria-label="anchor" href="#metadata"><i class="fas fa-link"></i></a>
+</h2>
+<div id="coded-data" class="section level3" number="3.8.1">
+<h3>
+<span class="header-section-number">3.8.1</span> Coded data<a class="anchor" aria-label="anchor" href="#coded-data"><i class="fas fa-link"></i></a>
 </h3>
 </div>
 </div>
-<div id="redcap" class="section level2" number="3.8">
+<div id="file-types" class="section level2" number="3.9">
 <h2>
-<span class="header-section-number">3.8</span> REDCap<a class="anchor" aria-label="anchor" href="#redcap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9</span> File Types<a class="anchor" aria-label="anchor" href="#file-types"><i class="fas fa-link"></i></a>
 </h2>
-</div>
-<div id="other-examples" class="section level2" number="3.9">
-<h2>
-<span class="header-section-number">3.9</span> Other Examples<a class="anchor" aria-label="anchor" href="#other-examples"><i class="fas fa-link"></i></a>
-</h2>
-<div id="qualtrics" class="section level3" number="3.9.1">
+<div id="csv" class="section level3" number="3.9.1">
 <h3>
-<span class="header-section-number">3.9.1</span> Qualtrics<a class="anchor" aria-label="anchor" href="#qualtrics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9.1</span> csv<a class="anchor" aria-label="anchor" href="#csv"><i class="fas fa-link"></i></a>
 </h3>
 </div>
-<div id="google-forms" class="section level3" number="3.9.2">
+<div id="xlsx" class="section level3" number="3.9.2">
 <h3>
-<span class="header-section-number">3.9.2</span> Google forms<a class="anchor" aria-label="anchor" href="#google-forms"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9.2</span> xlsx<a class="anchor" aria-label="anchor" href="#xlsx"><i class="fas fa-link"></i></a>
 </h3>
+</div>
+<div id="json" class="section level3" number="3.9.3">
+<h3>
+<span class="header-section-number">3.9.3</span> json<a class="anchor" aria-label="anchor" href="#json"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+</div>
+<div id="redcap" class="section level2" number="3.10">
+<h2>
+<span class="header-section-number">3.10</span> REDCap<a class="anchor" aria-label="anchor" href="#redcap"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="other-examples" class="section level2" number="3.11">
+<h2>
+<span class="header-section-number">3.11</span> Other Examples<a class="anchor" aria-label="anchor" href="#other-examples"><i class="fas fa-link"></i></a>
+</h2>
+<div id="qualtrics" class="section level3" number="3.11.1">
+<h3>
+<span class="header-section-number">3.11.1</span> Qualtrics<a class="anchor" aria-label="anchor" href="#qualtrics"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="google-forms" class="section level3" number="3.11.2">
+<h3>
+<span class="header-section-number">3.11.2</span> Google forms<a class="anchor" aria-label="anchor" href="#google-forms"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+</div>
+<div id="processes-related-to-your-model" class="section level2" number="3.12">
+<h2>
+<span class="header-section-number">3.12</span> Processes related to your model<a class="anchor" aria-label="anchor" href="#processes-related-to-your-model"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="quality-checks" class="section level2" number="3.13">
+<h2>
+<span class="header-section-number">3.13</span> quality checks<a class="anchor" aria-label="anchor" href="#quality-checks"><i class="fas fa-link"></i></a>
+</h2>
 
-</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -142,20 +189,35 @@
 <li><a class="nav-link" href="#models"><span class="header-section-number">3</span> Models</a></li>
 <li><a class="nav-link" href="#what-makes-a-good-model"><span class="header-section-number">3.1</span> What makes a good model?</a></li>
 <li><a class="nav-link" href="#love-the-data-you-have"><span class="header-section-number">3.2</span> Love the data you have</a></li>
-<li><a class="nav-link" href="#data-sources"><span class="header-section-number">3.3</span> data sources</a></li>
+<li><a class="nav-link" href="#data-sources"><span class="header-section-number">3.3</span> Data sources</a></li>
 <li><a class="nav-link" href="#emr-data-relational"><span class="header-section-number">3.4</span> EMR data (Relational)</a></li>
-<li><a class="nav-link" href="#transactional-vs-analytical-data"><span class="header-section-number">3.5</span> Transactional vs Analytical Data</a></li>
-<li><a class="nav-link" href="#data-structure"><span class="header-section-number">3.6</span> Data Structure</a></li>
+<li><a class="nav-link" href="#sql-database"><span class="header-section-number">3.5</span> SQL database</a></li>
+<li><a class="nav-link" href="#transactional-vs-analytical-data"><span class="header-section-number">3.6</span> Transactional vs Analytical Data</a></li>
 <li>
-<a class="nav-link" href="#metadata"><span class="header-section-number">3.7</span> Metadata</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#coded-data"><span class="header-section-number">3.7.1</span> Coded data</a></li></ul>
-</li>
-<li><a class="nav-link" href="#redcap"><span class="header-section-number">3.8</span> REDCap</a></li>
-<li>
-<a class="nav-link" href="#other-examples"><span class="header-section-number">3.9</span> Other Examples</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#qualtrics"><span class="header-section-number">3.9.1</span> Qualtrics</a></li>
-<li><a class="nav-link" href="#google-forms"><span class="header-section-number">3.9.2</span> Google forms</a></li>
+<a class="nav-link" href="#data-structure"><span class="header-section-number">3.7</span> Data Structure</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#widehorizontalde-normalized-data"><span class="header-section-number">3.7.1</span> Wide/Horizontal/De-Normalized Data</a></li>
+<li><a class="nav-link" href="#longverticalnormalized-data"><span class="header-section-number">3.7.2</span> Long/Vertical/Normalized Data</a></li>
 </ul>
 </li>
+<li>
+<a class="nav-link" href="#metadata"><span class="header-section-number">3.8</span> Metadata</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#coded-data"><span class="header-section-number">3.8.1</span> Coded data</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#file-types"><span class="header-section-number">3.9</span> File Types</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#csv"><span class="header-section-number">3.9.1</span> csv</a></li>
+<li><a class="nav-link" href="#xlsx"><span class="header-section-number">3.9.2</span> xlsx</a></li>
+<li><a class="nav-link" href="#json"><span class="header-section-number">3.9.3</span> json</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#redcap"><span class="header-section-number">3.10</span> REDCap</a></li>
+<li>
+<a class="nav-link" href="#other-examples"><span class="header-section-number">3.11</span> Other Examples</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#qualtrics"><span class="header-section-number">3.11.1</span> Qualtrics</a></li>
+<li><a class="nav-link" href="#google-forms"><span class="header-section-number">3.11.2</span> Google forms</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#processes-related-to-your-model"><span class="header-section-number">3.12</span> Processes related to your model</a></li>
+<li><a class="nav-link" href="#quality-checks"><span class="header-section-number">3.13</span> quality checks</a></li>
 </ul>
 
       <div class="book-extra">

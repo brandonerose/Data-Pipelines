@@ -27,6 +27,9 @@ Cost: Free for non-profit institutions who will host the server
 ## Microsoft Excel
 When to use: viewing and storing data, one time jobs such as designing your REDCap metadata
 Avoid for: data analysis
+Recommendation: modeling and viewing
+
+The problems with Excel as a controller... DAX language, manual entry of formulas.
 
 ## qualtrics
 

@@ -19,6 +19,8 @@ A data pipeline is an intentionally designed process that transforms data from i
 
 ## What is Model-View-Controller?
 
+Model-View-Controller (MVC) is a software design pattern used by many modern-day applications. In this framework, "model" is the database, including the structure and metadata, "view" is the user interface software, and "controller" is the coding language used to handle user input, update the model, and interact with the viewer. This can be thought of as a separation-of-concerns if I was writing code for an application or more broadly as a design concept. 
+
 ## When is a Data Pipeline Needed?
 
 A project will increasingly benefit from a data pipeline the more longitudinal, important, sensitive it is. For example, a one-time personal project does not need a data pipeline. A clinical trial may have several interconnected data pipelines.
@@ -27,7 +29,7 @@ A project will increasingly benefit from a data pipeline the more longitudinal, 
 
 Most common software applications can be thought of as a *controlled* data pipeline. Think of your bank website, a social media website, and the Epic Electronic Medical Record (EMR) as examples. Even if they don't necessarily use the MVC framework, they have different users, secure data model(s) on a backend server, a designed view on the frontend browser, and a series of controllers (computer programming and logic) that dictate the interactions between the view and the data model.
 
-One of the main highlights of this book is the versatility of REDCap, which can be thought of as both a model (data source) and an MVC application. 
+One of the main highlights of this book is the versatility of REDCap, which can be thought of as both a model (data source) and an MVC application. The major limitation with relying on a paid
 
 ## Authors
 
